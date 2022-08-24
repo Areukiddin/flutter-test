@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:yandex_music_desctop/models/track.dart';
+import 'package:yandex_music_desctop/widgets/track_list/list.dart';
 
-class FavoriteMusic extends StatelessWidget {
-  FavoriteMusic({Key? key}) : super(key: key);
+class Player extends StatelessWidget {
+  Player({Key? key}) : super(key: key);
 
   final List<Track> list = [
     Track(name: 'Track 1', duration: 12),
@@ -17,11 +18,7 @@ class FavoriteMusic extends StatelessWidget {
   ];
 
   @override
-  ListView build(BuildContext context) {
-    return ListView.builder(
-        padding: const EdgeInsets.all(20),
-        itemCount: list.length,
-        itemBuilder: (_, index) =>
-            Text('${list[index].name} - ${list[index].duration}'));
+  Widget build(BuildContext context) {
+    return MusicList(trackList: list);
   }
 }

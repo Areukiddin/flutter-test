@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:yandex_music_desctop/widgets/favorite/list.dart';
+import 'package:yandex_music_desctop/screens/main_screen.dart';
 
 void main() => runApp(const YandexMusicApp());
 
@@ -8,13 +8,6 @@ class YandexMusicApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
-            appBar: AppBar(
-              title: const Text("Yandex music"),
-              centerTitle: true,
-              backgroundColor: Colors.black87,
-            ),
-            body: FavoriteMusic()));
+    return const MaterialApp(home: MainScreen());
   }
 }
