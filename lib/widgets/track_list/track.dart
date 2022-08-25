@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:redux/redux.dart';
 import 'package:yandex_music_desctop/models/track.dart';
+import 'package:yandex_music_desctop/redux/actions/app_actions.dart';
+import 'package:yandex_music_desctop/redux/app_state.dart';
 
-class TrackItem extends StatefulWidget {
+class TrackItem extends StatelessWidget {
   const TrackItem({
     Key? key,
     required this.track,
@@ -10,26 +14,25 @@ class TrackItem extends StatefulWidget {
   final Track track;
 
   @override
-  State<TrackItem> createState() => _TrackItemState();
-}
-
-class _TrackItemState extends State<TrackItem> {
-  bool _isPlaying = false;
-
-  @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 10,
-      shadowColor: Colors.white,
-      child: ListTile(
-        title: Text(widget.track.name),
-        subtitle: Text(widget.track.duration.toString()),
-        leading: IconButton(
-            onPressed: () => setState(() {
-                  _isPlaying = !_isPlaying;
-                }),
-            icon: Icon(_isPlaying ? Icons.pause : Icons.play_arrow)),
-      ),
-    );
+    final Store<AppState> store = StoreProvider.of<AppState>(context);
+
+    return StoreConnector<AppState, AppState>(
+        builder: (context, state) => Card(
+              elevation: 10,
+              shadowColor: Colors.white,
+              child: ListTile(
+                title: const Text("random"),
+                subtitle: const Text("12"),
+                leading: IconButton(
+                    onPressed: () {
+                      store.dispatch(SetPlayingMusic());
+                      print(store.state.isPlayingMusic);
+                    },
+                    icon: Icon(
+                        state.isPlayingMusic ? Icons.pause : Icons.play_arrow)),
+              ),
+            ),
+        converter: (store) => store.state);
   }
 }

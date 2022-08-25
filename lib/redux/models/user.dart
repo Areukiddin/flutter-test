@@ -1,6 +1,6 @@
 class User {
-  final String name;
-  final String id;
+  String name;
+  String id;
 
   User({this.name = '', this.id = ''});
 }
