@@ -1,8 +1,11 @@
 import 'package:redux/redux.dart';
 import 'package:yandex_music_desctop/redux/actions/app_actions.dart';
+import 'package:yandex_music_desctop/redux/app_state.dart';
 
-Reducer<bool> setPlayMusicReducer =
-    combineReducers([TypedReducer<bool, SetPlayingMusic>(_setPlayMusic)]);
+Reducer<AppState> setPlayMusicReducer = combineReducers([
+  TypedReducer<AppState, SetCurrentPlayingTrack>(_setCurrentTrack),
+]);
 
-bool _setPlayMusic(bool isPlayingMusic, SetPlayingMusic action) =>
-    !isPlayingMusic;
+AppState _setCurrentTrack(AppState state, SetCurrentPlayingTrack action) {
+  return AppState.updateTrack(state, action.track);
+}

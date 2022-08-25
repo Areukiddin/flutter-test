@@ -1,6 +1,7 @@
 class Track {
-  String name;
-  int duration;
+  final String name;
+  final int duration;
+  final int id;
 
-  Track({this.name = 'Unnamed', this.duration = 0});
+  Track({required this.name, required this.duration, required this.id});
 }

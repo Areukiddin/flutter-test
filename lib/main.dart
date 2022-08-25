@@ -12,8 +12,10 @@ void main() {
 
 class YandexMusicApp extends StatelessWidget {
   final Store<AppState> store = Store(reducer,
-      initialState:
-          AppState(user: User(name: '', id: ''), isPlayingMusic: false));
+      initialState: AppState(
+          user: User(name: '', id: ''),
+          isPlayingMusic: false,
+          currentPlayingTrack: null));
 
   YandexMusicApp({Key? key}) : super(key: key);
 

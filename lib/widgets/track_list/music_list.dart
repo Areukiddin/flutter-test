@@ -5,7 +5,7 @@ import 'package:yandex_music_desctop/widgets/track_list/track.dart';
 class MusicList extends StatefulWidget {
   MusicList({
     Key? key,
-    this.trackList = const [],
+    required this.trackList,
   }) : super(key: key);
 
   List<Track> trackList;
