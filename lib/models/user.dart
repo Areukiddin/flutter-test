@@ -21,6 +21,14 @@ class Data {
     required this.avatar,
   });
 
+  final authData = {
+    "grant_type": "password",
+    "client_id": "23cabbbdc6cd418abb4b39c32c41195d",
+    "client_secret": "53bc75238f0c4d08a118e51fe9203300",
+    "username": "nitreks@yandex.ru",
+    "password": "15237q24Q",
+  };
+
   String id;
   String email;
   String firstName;
