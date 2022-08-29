@@ -3,7 +3,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:yandex_music_desctop/models/track.dart';
 import 'package:yandex_music_desctop/redux/actions/app_actions.dart';
-import 'package:yandex_music_desctop/redux/app_state.dart';
+import 'package:yandex_music_desctop/models/app_state.dart';
 
 class TrackItem extends StatefulWidget {
   const TrackItem({Key? key, required this.track}) : super(key: key);

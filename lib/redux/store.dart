@@ -1,4 +1,4 @@
-import 'package:yandex_music_desctop/redux/app_state.dart';
+import 'package:yandex_music_desctop/models/app_state.dart';
 
 class MusicStore {
   AppState state;

@@ -1,9 +1,11 @@
-class User {
-  User({required this.data});
+class TrackList {
+  TrackList({
+    required this.data,
+  });
 
   Data data;
 
-  factory User.fromJson(Map<String, dynamic> json) => User(
+  factory TrackList.fromJson(Map<String, dynamic> json) => TrackList(
         data: Data.fromJson(json["data"]),
       );
 
@@ -21,7 +23,7 @@ class Data {
     required this.avatar,
   });
 
-  String id;
+  int id;
   String email;
   String firstName;
   String lastName;

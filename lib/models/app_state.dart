@@ -6,19 +6,26 @@ class AppState {
   User? user;
   bool isPlayingMusic = false;
   Track? currentPlayingTrack;
+  int? currentTab = 0;
 
   AppState(
       {required this.user,
       required this.isPlayingMusic,
-      required this.currentPlayingTrack});
+      required this.currentPlayingTrack,
+      required this.currentTab});
 
-  AppState.updateTrack(AppState prevState, Track track) {
-    if (prevState.currentPlayingTrack?.id == track.id) {
+  AppState.update(AppState prevState,
+      [Track? track, int? tab, User? userData]) {
+    if (prevState.currentPlayingTrack?.id == track?.id) {
       currentPlayingTrack = prevState.currentPlayingTrack;
       isPlayingMusic = !prevState.isPlayingMusic;
     } else {
       currentPlayingTrack = track;
       isPlayingMusic = true;
     }
+
+    currentTab = tab ?? prevState.currentTab;
+
+    user = userData ?? prevState.user;
   }
 }

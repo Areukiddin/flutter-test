@@ -5,3 +5,9 @@ class SetCurrentPlayingTrack {
 
   SetCurrentPlayingTrack(this.track);
 }
+
+class SetCurrenTab {
+  final int tab;
+
+  SetCurrenTab(this.tab);
+}
